@@ -1,0 +1,23 @@
+joined 4200 channels (ground truth 4200, estimators 155520), 210 modules
+ceiling: noise draw-to-draw Spearman, mean pairwise, pooled 0.777
+
+vs s_noise (Spearman; overlap = share of true top 10% also in the estimator's top 10%)
+estimator      pooled  med/module  top10%
+fisher_emp      0.813       0.543   0.724
+fisher_true     0.834       0.624   0.774
+ch_rms         -0.379       0.112   0.060
+
+per module type, Spearman vs s_noise (pooled over that type's channels)
+module          n   fisher_emp  fisher_true       ch_rms
+q_proj        600        0.678        0.695        0.208
+k_proj        600        0.691        0.778        0.263
+v_proj        600        0.628        0.747       -0.387
+o_proj        600        0.986        0.991       -0.883
+gate_proj     600        0.273        0.280       -0.110
+up_proj       600        0.921        0.917       -0.594
+down_proj     600        0.986        0.992       -0.908
+
+vs d_zero
+estimator      pooled  top10%
+gxa_abs         0.146   0.607
+neg_gxa         0.838   0.700

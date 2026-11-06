@@ -1,0 +1,40 @@
+{
+ "n_windows": 256,
+ "nA": 128,
+ "nB": 128,
+ "est_data": "pmc",
+ "seq_len": 1024,
+ "wall_s": 274.2785985469818,
+ "self_check": {
+  "pre4": "skipped",
+  "rot4": "skipped",
+  "pre8": "skipped"
+ },
+ "args": {
+  "model": "google/gemma-3-1b-pt",
+  "mode": "grad",
+  "group": 128,
+  "seq_len": 1024,
+  "calib": 256,
+  "est_data": "pmc",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 0,
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "zs_tasks": "",
+  "zs_batch": 16,
+  "zs_configs": "",
+  "out_dir": "/workspace/results_xd/gemma/grad_pmc"
+ }
+}

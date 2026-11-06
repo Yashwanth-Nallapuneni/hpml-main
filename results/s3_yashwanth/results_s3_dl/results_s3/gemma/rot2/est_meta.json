@@ -1,0 +1,29 @@
+{
+ "clean_loss_calib": 3.2026839717741935,
+ "n_tok": 8184,
+ "wall_s": 184.97030472755432,
+ "args": {
+  "model": "google/gemma-3-1b-pt",
+  "mode": "est",
+  "group": 128,
+  "seq_len": 1024,
+  "calib": 8,
+  "est_data": "wikitext",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 2,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 2,
+  "random_seeds": 5,
+  "align": "cat",
+  "cat_k": 128,
+  "out_dir": "/workspace/results_s3/gemma/rot2"
+ }
+}

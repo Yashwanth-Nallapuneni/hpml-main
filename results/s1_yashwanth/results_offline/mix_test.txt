@@ -1,0 +1,12 @@
+
+### results_mackin_s2/results_mackin_cat/qwen3
+pre4: en CV within block median 0.644 (p90 1.433) | spearman(qf, fish*en_block) 0.819, (qf, fish*en_own) 0.912, (qf, fish) 0.589, (qf, en) -0.091 | within-block: (qf,fish) 0.601 (qf,en) 0.317 | frac g1>0 0.500
+rot4: en CV within block median 0.124 (p90 0.162) | spearman(qf, fish*en_block) 0.894, (qf, fish*en_own) 0.898, (qf, fish) 0.643, (qf, en) -0.181 | within-block: (qf,fish) 0.742 (qf,en) 0.174 | frac g1>0 0.500
+
+### results_mackin_s2/results_mackin_cat/llama
+pre4: en CV within block median 0.577 (p90 1.168) | spearman(qf, fish*en_block) 0.834, (qf, fish*en_own) 0.945, (qf, fish) 0.728, (qf, en) -0.241 | within-block: (qf,fish) 0.603 (qf,en) 0.274 | frac g1>0 0.500
+rot4: en CV within block median 0.088 (p90 0.130) | spearman(qf, fish*en_block) 0.937, (qf, fish*en_own) 0.942, (qf, fish) 0.776, (qf, en) -0.319 | within-block: (qf,fish) 0.789 (qf,en) 0.158 | frac g1>0 0.500
+
+### results_mackin_s2/results_mackin_cat/gemma
+pre4: en CV within block median 0.670 (p90 1.585) | spearman(qf, fish*en_block) 0.828, (qf, fish*en_own) 0.913, (qf, fish) 0.604, (qf, en) 0.197 | within-block: (qf,fish) 0.673 (qf,en) 0.349 | frac g1>0 0.500
+rot4: en CV within block median 0.104 (p90 0.129) | spearman(qf, fish*en_block) 0.902, (qf, fish*en_own) 0.906, (qf, fish) 0.681, (qf, en) 0.084 | within-block: (qf,fish) 0.780 (qf,en) 0.134 | frac g1>0 0.501

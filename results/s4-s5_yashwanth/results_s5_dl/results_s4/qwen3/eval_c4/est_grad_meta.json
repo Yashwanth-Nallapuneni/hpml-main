@@ -1,0 +1,46 @@
+{
+ "n_windows": 512,
+ "nA": 256,
+ "nB": 256,
+ "est_data": "wikitext",
+ "seq_len": 2048,
+ "wall_s": 664.355171918869,
+ "self_check": {
+  "pre4": {
+   "pearson": 0.9999999999998941,
+   "max_abs_rel": 2.3149686861225833e-07
+  },
+  "rot4": {
+   "pearson": 0.9999999999998549,
+   "max_abs_rel": 3.757180502351038e-07
+  },
+  "pre8": {
+   "pearson": 0.9999999999998922,
+   "max_abs_rel": 4.246213115233501e-07
+  }
+ },
+ "args": {
+  "model": "Qwen/Qwen3-0.6B",
+  "mode": "grad",
+  "group": 128,
+  "seq_len": 2048,
+  "calib": 512,
+  "est_data": "wikitext",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 0,
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "out_dir": "/workspace/results_s4/qwen3/grad_wt"
+ }
+}

@@ -1,0 +1,12 @@
+{"part": "swcat", "sw": "none", "seed": 0, "ppl": 19.044193012820486, "seconds": 329.9, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "fisher", "seed": 0, "ppl": 18.82067319228544, "seconds": 329.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "shuffled", "seed": 0, "ppl": 19.185718095635792, "seconds": 329.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "none", "seed": 1, "ppl": 19.262915950599737, "seconds": 329.4, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "fisher", "seed": 1, "ppl": 18.809150354941305, "seconds": 329.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "shuffled", "seed": 1, "ppl": 19.00102462617694, "seconds": 329.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "none", "seed": 2, "ppl": 19.17955400179648, "seconds": 329.8, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "fisher", "seed": 2, "ppl": 18.950526734732883, "seconds": 329.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "shuffled", "seed": 2, "ppl": 18.92303091971016, "seconds": 329.4, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "none", "seed": 3, "ppl": 19.41467014131461, "seconds": 329.9, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "fisher", "seed": 3, "ppl": 18.624902829310393, "seconds": 329.7, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "swcat", "sw": "shuffled", "seed": 3, "ppl": 18.891525454926903, "seconds": 329.7, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}

@@ -1,0 +1,26 @@
+{
+ "model": "Qwen/Qwen3-0.6B",
+ "windows": 2,
+ "seq_len": 2048,
+ "group": 128,
+ "n_modules": 196,
+ "within_block_cv_median": 0.14921463806920754,
+ "noise": {
+  "spearman": 0.9946655584924787,
+  "pearson_raw": 0.9827710245395036,
+  "pearson_log": 0.9970826049971655,
+  "median_ratio": 1.0338550640145925,
+  "block_spearman": 0.9999333768652922,
+  "block_pearson_log": 0.999974233110469,
+  "median_module_spearman": 0.6706822514533997
+ },
+ "emp": {
+  "spearman": 0.9946685351829796,
+  "pearson_raw": 0.9827747906383385,
+  "pearson_log": 0.9970837482599694,
+  "median_ratio": 1.0260332544304969,
+  "block_spearman": 0.9999376617582625,
+  "block_pearson_log": 0.999975484832684,
+  "median_module_spearman": 0.6707817316055298
+ }
+}

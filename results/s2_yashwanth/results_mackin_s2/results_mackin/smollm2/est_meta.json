@@ -1,0 +1,21 @@
+{
+ "clean_loss_calib": 2.840882704324354,
+ "n_tok": 32752,
+ "wall_s": 334.8516001701355,
+ "args": {
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "mode": "est",
+  "group": 64,
+  "seq_len": 2048,
+  "calib": 16,
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "k": "2",
+  "random_seeds": 3,
+  "out_dir": "/workspace/results_mackin/smollm2"
+ }
+}

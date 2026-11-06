@@ -1,0 +1,21 @@
+{"part": "swcat", "sw": "none", "seed": 0, "ppl": 19.044193012820486, "seconds": 330.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "pred", "ppl": 18.893928451588504, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "curv", "ppl": 18.87884606870004, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "fisher", "ppl": 18.916899411446643, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "err", "ppl": 18.982873893369362, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "energy", "ppl": 18.912227952610962, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "random0", "ppl": 19.01794505382278, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "random1", "ppl": 19.026501268270238, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "random2", "ppl": 19.034542913834535, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "random3", "ppl": 18.973832410151406, "seconds": 172.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 2, "selector": "random4", "ppl": 19.047485471663958, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "pred", "ppl": 18.692535250415883, "seconds": 172.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "curv", "ppl": 18.704313166332238, "seconds": 172.0, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "fisher", "ppl": 18.817169406105528, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "err", "ppl": 18.99164559155127, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "energy", "ppl": 18.795177145306408, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "random0", "ppl": 19.011659124983716, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "random1", "ppl": 18.956477815609922, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "random2", "ppl": 18.945826811428077, "seconds": 172.1, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "random3", "ppl": 18.981549267213065, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"part": "exempt", "sw": "none", "seed": 0, "k": 8, "selector": "random4", "ppl": 19.031504980866355, "seconds": 172.2, "test_windows": 141, "cat_k": 128, "model": "meta-llama/Llama-3.2-1B-Instruct"}

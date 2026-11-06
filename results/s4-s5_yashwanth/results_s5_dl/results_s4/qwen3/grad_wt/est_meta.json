@@ -1,0 +1,23 @@
+{
+ "clean_loss_calib": 3.1301140722322303,
+ "n_tok": 16376,
+ "wall_s": 182.66398739814758,
+ "args": {
+  "model": "Qwen/Qwen3-0.6B",
+  "mode": "est",
+  "group": 128,
+  "seq_len": 2048,
+  "calib": 8,
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "k": "2",
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "out_dir": "/workspace/results_mackin_cat/qwen3"
+ }
+}

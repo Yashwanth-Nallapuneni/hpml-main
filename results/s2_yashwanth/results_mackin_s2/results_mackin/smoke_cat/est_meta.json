@@ -1,0 +1,23 @@
+{
+ "clean_loss_calib": 3.162561875992306,
+ "n_tok": 2047,
+ "wall_s": 19.824135541915894,
+ "args": {
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "mode": "est",
+  "group": 64,
+  "seq_len": 2048,
+  "calib": 1,
+  "fisher_samples": 2,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "k": "2",
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": null,
+  "out_dir": "/workspace/results_mackin/smoke_cat"
+ }
+}

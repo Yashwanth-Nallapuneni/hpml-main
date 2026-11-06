@@ -1,0 +1,55 @@
+/workspace/results_sens/smollm2_fp32_s20: 4200 channels, 30 layers, clean loss 2.38765
+max |dloss| on untouched rows: 0.00e+00  (should be ~0)
+Spearman between noise draws: 0-1 0.780, 0-2 0.778, 1-2 0.774
+Spearman zero vs mean 0.842 | zero vs noise 0.246 | mean vs noise 0.216
+share of channels with mean dloss from noise > 0: 0.935
+
+median dloss by module:
+             d_zero    d_mean   d_noise   s_noise
+module                                           
+down_proj 1.181e-04 1.133e-04 1.312e-06 4.463e-05
+gate_proj 4.067e-05 3.972e-05 5.168e-07 6.423e-05
+k_proj    6.918e-05 6.178e-05 2.425e-06 4.946e-05
+o_proj    6.238e-05 4.389e-05 6.361e-07 4.655e-05
+q_proj    3.113e-05 1.026e-05 5.168e-07 1.519e-05
+up_proj   4.067e-05 3.781e-05 3.578e-07 9.022e-05
+v_proj    1.256e-04 1.429e-04 2.544e-06 4.413e-04
+
+top 10 by d_zero:
+ layer    module  channel    ch_rms    d_zero    d_mean   d_noise   s_noise
+     8    k_proj       62 4.454e+00 1.195e-01 1.195e-01 1.348e-05 3.627e-04
+     1    k_proj       32 5.855e+00 7.126e-02 1.148e-02 4.202e-05 8.040e-04
+    19    k_proj      155 5.436e+00 5.988e-02 5.988e-02 2.152e-04 4.232e-03
+     4    k_proj       88 8.110e-01 3.913e-02 3.884e-02 1.415e-05 3.125e-04
+    29 down_proj        8 6.821e+01 3.257e-02 2.562e-02 4.564e-05 7.383e-06
+     3    k_proj       56 7.024e-01 2.774e-02 2.804e-02 1.252e-04 2.794e-03
+    29 down_proj      350 3.979e+01 2.660e-02 1.789e-02 8.138e-05 1.316e-05
+    17    q_proj      351 5.857e+00 2.607e-02 5.219e-04 2.767e-05 6.431e-04
+     3    k_proj       87 1.099e+00 2.317e-02 2.329e-02 1.075e-04 2.400e-03
+    23    k_proj       63 4.667e+00 1.953e-02 1.952e-02 1.012e-04 2.023e-03
+
+top 10 by d_mean:
+ layer    module  channel    ch_rms    d_zero    d_mean   d_noise   s_noise
+     8    k_proj       62 4.454e+00 1.195e-01 1.195e-01 1.348e-05 3.627e-04
+    19    k_proj      155 5.436e+00 5.988e-02 5.988e-02 2.152e-04 4.232e-03
+    18    v_proj      143 4.237e+00 3.299e-03 5.847e-02 7.502e-05 6.904e-03
+    19    v_proj      131 3.441e+00 2.882e-03 4.284e-02 9.661e-06 1.008e-03
+     4    k_proj       88 8.110e-01 3.913e-02 3.884e-02 1.415e-05 3.125e-04
+     3    k_proj       56 7.024e-01 2.774e-02 2.804e-02 1.252e-04 2.794e-03
+    29 down_proj        8 6.821e+01 3.257e-02 2.562e-02 4.564e-05 7.383e-06
+     3    k_proj       87 1.099e+00 2.317e-02 2.329e-02 1.075e-04 2.400e-03
+     2    v_proj       75 1.623e+00 1.149e-02 2.142e-02 2.465e-06 1.785e-03
+    23    k_proj       63 4.667e+00 1.953e-02 1.952e-02 1.012e-04 2.023e-03
+
+top 10 by s_noise:
+ layer module  channel    ch_rms     d_zero     d_mean   d_noise   s_noise
+     0 o_proj      276 1.059e-01  9.207e-04 -1.230e-03 1.920e-05 1.741e-01
+     0 o_proj      140 1.110e-01  1.945e-03  4.512e-03 1.121e-05 1.017e-01
+     0 o_proj      375 2.685e-02 -1.612e-04 -1.496e-04 7.554e-06 6.849e-02
+     0 o_proj      415 4.168e-02  1.677e-04 -1.312e-05 6.719e-06 6.092e-02
+     0 o_proj       71 1.980e-02  2.767e-04  1.560e-04 6.560e-06 5.948e-02
+     0 o_proj      262 2.226e-02 -4.484e-05 -1.527e-05 6.321e-06 5.731e-02
+     0 o_proj      222 4.013e-02  1.000e-03  9.980e-04 5.765e-06 5.227e-02
+     0 o_proj      472 3.184e-02  3.068e-04  4.127e-04 5.765e-06 5.227e-02
+     0 o_proj      159 4.026e-02 -2.731e-04 -6.083e-05 5.645e-06 5.119e-02
+     0 o_proj      562 1.222e-02  1.431e-06  7.156e-06 5.009e-06 4.542e-02

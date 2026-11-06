@@ -1,0 +1,2 @@
+model,config,seed,group_size,block,a_bits,out_bits,ppl,mean_rel_err,mean_snr_db,time_s
+Llama-3.2-1B,int4_rot,0,128,full,,,12.597657996480097,0.08870911786545607,22.12839279174059,81.03964519500732

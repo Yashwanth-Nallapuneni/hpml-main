@@ -1,0 +1,4 @@
+{"method": "fp", "ppl": 14.921277113136464, "seconds": 0.6, "w_bits": 4, "a_bits": 4, "kv_bits": 4, "w_range": "l2.4", "calib": "wikitext", "n_calib": 4, "test_windows": 4, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"method": "rtn", "ppl": 327.99608352394506, "seconds": 24.7, "w_bits": 4, "a_bits": 4, "kv_bits": 4, "w_range": "l2.4", "calib": "wikitext", "n_calib": 4, "test_windows": 4, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"method": "quarot", "ppl": 30.533898560787414, "seconds": 121.7, "w_bits": 4, "a_bits": 4, "kv_bits": 4, "w_range": "l2.4", "calib": "wikitext", "n_calib": 4, "test_windows": 4, "model": "meta-llama/Llama-3.2-1B-Instruct"}
+{"method": "cat", "ppl": 21.654291602048374, "seconds": 163.8, "w_bits": 4, "a_bits": 4, "kv_bits": 4, "w_range": "l2.4", "calib": "wikitext", "n_calib": 4, "test_windows": 4, "model": "meta-llama/Llama-3.2-1B-Instruct", "cat_k": "128", "seed": 0, "k1_formula": "eq8", "calib_seconds": 195.5}

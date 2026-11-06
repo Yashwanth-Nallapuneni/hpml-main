@@ -1,0 +1,44 @@
+{
+ "n_windows": 16,
+ "nA": 8,
+ "nB": 8,
+ "est_data": "wikitext",
+ "seq_len": 2048,
+ "wall_s": 32.214457273483276,
+ "self_check": {
+  "rot4": {
+   "pearson": 0.9992899486066589,
+   "max_abs_rel": 0.03782458124612504
+  }
+ },
+ "args": {
+  "model": "Qwen/Qwen3-0.6B",
+  "mode": "grad",
+  "group": 128,
+  "seq_len": 2048,
+  "calib": 16,
+  "est_data": "wikitext",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 0,
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "zs_tasks": "",
+  "zs_batch": 16,
+  "zs_configs": "",
+  "weights_dtype": "bf16",
+  "grad_hooks": true,
+  "orig_on_cpu": false,
+  "out_dir": "/workspace/results_xd/bf16check"
+ }
+}

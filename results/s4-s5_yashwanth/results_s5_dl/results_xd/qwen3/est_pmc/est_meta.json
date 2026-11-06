@@ -1,0 +1,32 @@
+{
+ "clean_loss_calib": 2.000118522103612,
+ "n_tok": 16376,
+ "wall_s": 176.36535215377808,
+ "args": {
+  "model": "Qwen/Qwen3-0.6B",
+  "mode": "est",
+  "group": 128,
+  "seq_len": 2048,
+  "calib": 8,
+  "est_data": "pmc",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 4,
+  "batch": 4,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 0,
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "zs_tasks": "",
+  "zs_batch": 16,
+  "zs_configs": "",
+  "out_dir": "/workspace/results_xd/qwen3/est_pmc"
+ }
+}

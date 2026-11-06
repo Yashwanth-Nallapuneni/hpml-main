@@ -1,0 +1,91 @@
+
+######## /workspace/results_qsens/smollm2  (210 modules with ground truth)
+
+== int4 channels: 1680 one-sided, 1680 with mirror
+  replication A vs B (pooled / within-module): one-sided 0.175 / 0.190 | sym 0.723 / 0.548 | share sym>0 0.91 | median |anti|/|sym| 23.8
+  predictor (calibration text C unless noted)  pooled  within  top10%
+ target one-sided d_AB
+  en (output error energy)                   0.004  -0.024   0.226
+  enw (weight error energy)                  0.006   0.024   0.202
+  fish x en                                 -0.003  -0.000   0.315
+  fd/2 (token-diag Fisher)                   0.008   0.000   0.333
+  fde/2 (token-diag emp. Fisher)             0.014   0.024   0.345
+  wf/2 (diag weight Fisher)                  0.013   0.060   0.351
+  qf/2 (GGN quadratic form)                  0.007  -0.024   0.351
+  g1 (first order)                           0.244   0.286   0.351
+  g1 + qf/2 (2nd-order Taylor)               0.243   0.286   0.381
+ target sym_AB (curvature)
+  en (output error energy)                   0.451   0.476   0.250
+  enw (weight error energy)                  0.340   0.226   0.167
+  fish x en                                  0.810   0.643   0.690
+  fd/2 (token-diag Fisher)                   0.820   0.690   0.726
+  fde/2 (token-diag emp. Fisher)             0.806   0.667   0.738
+  wf/2 (diag weight Fisher)                  0.823   0.619   0.768
+  qf/2 (GGN quadratic form)                  0.849   0.738   0.857
+  g1 (first order)                           0.012   0.012   0.375
+  g1 + qf/2 (2nd-order Taylor)               0.085   0.071   0.446
+  ceiling for sym_AB (Spearman-Brown of A vs B): 0.839
+  fish (no error used) vs sym_AB / en        0.744   0.405   0.613
+  qf/en vs sym_AB / en                       0.791   0.571   0.833
+  g1 in-sample vs one-sided d_A              0.996   1.000   0.958
+  g1 in-sample vs anti_A                     1.000   1.000   0.994
+  qf/2 in-sample vs sym_A                    0.813   0.679   0.821
+  g1 in-sample vs one-sided d_B              0.995   1.000   0.970
+  g1 in-sample vs anti_B                     1.000   1.000   0.994
+  qf/2 in-sample vs sym_B                    0.832   0.738   0.845
+-- int4 whole modules (210): mean one-sided d_AB 1.33e-03; replication A vs B 0.283, sym 0.939
+   en                                 vs one-sided d_AB 0.166 | vs sym_AB 0.269
+   qf/2 full                          vs one-sided d_AB 0.478 | vs sym_AB 0.965
+   qf_diag/2 (channels independent)   vs one-sided d_AB 0.487 | vs sym_AB 0.978
+   cross-channel share of qf: median (qf - qf_diag)/qf = -0.02
+   calibration: median (qf/2)/sym_AB = 0.98
+
+== rot channels: 1680 one-sided, 1680 with mirror
+  replication A vs B (pooled / within-module): one-sided 0.134 / 0.131 | sym 0.703 / 0.476 | share sym>0 0.91 | median |anti|/|sym| 23.0
+  predictor (calibration text C unless noted)  pooled  within  top10%
+ target one-sided d_AB
+  en (output error energy)                   0.032  -0.024   0.226
+  enw (weight error energy)                  0.001  -0.048   0.179
+  fish x en                                  0.073   0.000   0.411
+  fd/2 (token-diag Fisher)                   0.082   0.024   0.423
+  fde/2 (token-diag emp. Fisher)             0.078   0.024   0.417
+  wf/2 (diag weight Fisher)                  0.079   0.000   0.446
+  qf/2 (GGN quadratic form)                  0.083   0.000   0.458
+  g1 (first order)                           0.235   0.238   0.417
+  g1 + qf/2 (2nd-order Taylor)               0.244   0.238   0.446
+ target sym_AB (curvature)
+  en (output error energy)                   0.408   0.429   0.274
+  enw (weight error energy)                  0.173   0.143   0.143
+  fish x en                                  0.823   0.607   0.702
+  fd/2 (token-diag Fisher)                   0.833   0.667   0.774
+  fde/2 (token-diag emp. Fisher)             0.818   0.643   0.768
+  wf/2 (diag weight Fisher)                  0.826   0.595   0.827
+  qf/2 (GGN quadratic form)                  0.855   0.702   0.905
+  g1 (first order)                           0.044   0.048   0.452
+  g1 + qf/2 (2nd-order Taylor)               0.111   0.083   0.530
+  ceiling for sym_AB (Spearman-Brown of A vs B): 0.826
+  fish (no error used) vs sym_AB / en        0.771   0.476   0.667
+  qf/en vs sym_AB / en                       0.805   0.619   0.863
+  g1 in-sample vs one-sided d_A              0.996   1.000   0.970
+  g1 in-sample vs anti_A                     1.000   1.000   1.000
+  qf/2 in-sample vs sym_A                    0.795   0.619   0.863
+  g1 in-sample vs one-sided d_B              0.995   1.000   0.976
+  g1 in-sample vs anti_B                     1.000   1.000   1.000
+  qf/2 in-sample vs sym_B                    0.840   0.714   0.875
+-- rot whole modules (210): mean one-sided d_AB 1.76e-03; replication A vs B 0.424, sym 0.955
+   en                                 vs one-sided d_AB 0.070 | vs sym_AB 0.226
+   qf/2 full                          vs one-sided d_AB 0.579 | vs sym_AB 0.965
+   qf_diag/2 (channels independent)   vs one-sided d_AB 0.594 | vs sym_AB 0.966
+   cross-channel share of qf: median (qf - qf_diag)/qf = -0.03
+   calibration: median (qf/2)/sym_AB = 0.99
+
+-- rotation harm, curvature part (sym, 210 modules): rotation hurts in 0.48
+   int4 module sym vs qf/2: Spearman 0.965, median ratio qf/2 / sym 0.98
+   rot module sym vs qf/2: Spearman 0.965, median ratio qf/2 / sym 0.99
+   harm predicted by qf/2 : Spearman 0.690, sign agreement 0.73
+   harm predicted by en   : Spearman 0.511, sign agreement 0.69
+
+-- rotation harm per module (rot - int4, one-sided, 210 modules): rotation hurts in 0.57; total output error falls with rotation in 0.84
+   predicted by qf/2      : Spearman 0.314, sign agreement 0.64
+   predicted by en        : Spearman 0.159, sign agreement 0.50
+   predicted by g1 + qf/2 : Spearman 0.348, sign agreement 0.59

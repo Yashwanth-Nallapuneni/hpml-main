@@ -1,0 +1,31 @@
+{
+ "args": {
+  "model": "meta-llama/Llama-3.2-1B",
+  "mode": "est",
+  "group": 128,
+  "kinds": "int4,rot",
+  "chan_kinds": "int4,rot",
+  "no_sym": false,
+  "gt_file": "gt.csv",
+  "per_module": 10,
+  "batch": 8,
+  "calib": 8,
+  "fisher_samples": 16,
+  "seq_len": 2048,
+  "max_minutes": 1000000000.0,
+  "out_dir": "/workspace/results_qsens/llama"
+ },
+ "clean_loss": {
+  "A": 1.8870381484336833,
+  "B": 1.9780519128602834,
+  "C": 2.1238651694934663
+ },
+ "n_tok": {
+  "A": 2047,
+  "B": 2047,
+  "C": 16376
+ },
+ "wall_s": 887.5814049243927,
+ "torch": "2.9.1+cu129",
+ "transformers": "5.20.2"
+}

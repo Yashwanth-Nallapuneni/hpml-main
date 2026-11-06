@@ -1,0 +1,26 @@
+{
+ "noop_max_abs": 0.0,
+ "start_check": {
+  "0": 2.375286871874018e-07
+ },
+ "args": {
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "mode": "gt",
+  "group": 64,
+  "kinds": "int4,rot",
+  "chan_kinds": "int4,rot",
+  "per_module": 10,
+  "batch": 16,
+  "calib": 8,
+  "fisher_samples": 16,
+  "seq_len": 2048,
+  "max_minutes": 0.01,
+  "out_dir": "/workspace/results_qsens/smoke"
+ },
+ "clean_loss_rows": [
+  2.302117884064152,
+  2.4731792370972894
+ ],
+ "torch": "2.9.1+cu129",
+ "transformers": "5.20.2"
+}

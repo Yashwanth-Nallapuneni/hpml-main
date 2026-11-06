@@ -1,0 +1,26 @@
+{
+ "model": "meta-llama/Llama-3.2-1B",
+ "windows": 2,
+ "seq_len": 2048,
+ "group": 128,
+ "n_modules": 112,
+ "within_block_cv_median": 0.12997995739552473,
+ "noise": {
+  "spearman": 0.9868758396904173,
+  "pearson_raw": 0.976932230384083,
+  "pearson_log": 0.9964502905641084,
+  "median_ratio": 1.0289542667000566,
+  "block_spearman": 0.9997947348066802,
+  "block_pearson_log": 0.9999676307377375,
+  "median_module_spearman": 0.4607962965965271
+ },
+ "emp": {
+  "spearman": 0.9868790891265621,
+  "pearson_raw": 0.9769320389151295,
+  "pearson_log": 0.996450944743037,
+  "median_ratio": 1.0210062018333272,
+  "block_spearman": 0.9997986725642076,
+  "block_pearson_log": 0.999968123194051,
+  "median_module_spearman": 0.460930734872818
+ }
+}
