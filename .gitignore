@@ -1,0 +1,19 @@
+# big or generated files stay out of git
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+*.log
+logs/
+wandb/
+__pycache__/
+*.pyc
+.venv/
+venv*/
+.ipynb_checkpoints/
+.DS_Store
+.env
