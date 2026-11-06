@@ -7,9 +7,8 @@ This repo holds the team's shared code, small results and handovers. If you (or 
 ## Layout
 | folder | what goes here |
 |---|---|
-| `src/` | shared library code |
-| `scripts/` | entry points and run queues |
-| `analysis/` | offline analysis scripts |
+| `src/` | shared library code (data loading, quantizer, Hadamard, model wrapper, evaluation) |
+| repo root `*.py`, `*.sh` | entry points, VM queues and analysis scripts. They import each other and `src/`, so run them from the repo root (for example `python run_mackin.py --help`) |
 | `paper/` | report / paper drafts, figures script, bib |
 | `results/<date>_<name>_<experiment>/` | small result files (CSV/JSON summaries, under 1 MB) plus a README with the command, commit and cost |
 | `handovers/<name>/` | each person's handovers: `LATEST.md` plus dated copies |

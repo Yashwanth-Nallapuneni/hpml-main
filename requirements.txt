@@ -1,0 +1,6 @@
+transformers>=4.56
+datasets
+accelerate
+matplotlib
+pandas
+lm-eval==0.4.12
