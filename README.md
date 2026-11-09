@@ -36,4 +36,6 @@ python pipeline/run_mackin.py --help
 ```
 Model runs need a GPU (we use the team GCP VM, see `vm/vm.sh`).
 
+Known limits: `analysis/analysis_lodo.py` only runs on the VM (hard-coded to `/workspace/results_xd`). The `vm/queues/` scripts are records of what was run and use the old flat layout (`/workspace/repo*`), so fix their paths before reusing them.
+
 Large files (model weights, `.pt`, archives, logs, per-channel score files over 1 MB) are not in git. Keep them on the VM or in shared storage and link them from your handover.
