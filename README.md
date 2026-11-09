@@ -2,10 +2,14 @@
 
 COMS 6998 (HPML), Fall 2026. Mentor: Dr. Charles Mackin (IBM Research).
 
-Shared code, small results and handovers for the team. Starting a work session (you or your coding agent)? Read `AGENTS.md` first.
+Shared code, small results and handovers for the team.
+
+- **New to the project? Read `OVERVIEW.md`** (what the project is, how the estimator works, what we found).
+- Starting a work session (you or your coding agent)? Read `AGENTS.md` first.
 
 ## Layout
 ```
+OVERVIEW.md          plain-language explanation of the whole project (start here)
 AGENTS.md            rules for every teammate and agent (read first)
 STATE.md             one-page project status and who is on what
 requirements.txt
