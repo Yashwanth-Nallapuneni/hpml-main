@@ -5,6 +5,7 @@ COMS 6998 (HPML), Fall 2026. Mentor: Dr. Charles Mackin (IBM Research).
 Shared code, small results and handovers for the team.
 
 - **New to the project? Read `OVERVIEW.md`** (what the project is, how the estimator works, what we found).
+- **Prefer video?** Watch the 34-min explainer: [Which Channels Matter?](https://github.com/Yashwanth-Nallapuneni/team20-hpml/releases/tag/video-2026-11-09) (GitHub Release, download the .mp4).
 - Starting a work session (you or your coding agent)? Read `AGENTS.md` first.
 
 ## Layout
