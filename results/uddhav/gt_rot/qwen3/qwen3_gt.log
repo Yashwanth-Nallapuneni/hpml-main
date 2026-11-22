@@ -1,0 +1,25 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights:   1%|          | 2/311 [00:00<00:35,  8.78it/s]Loading weights:  29%|██▉       | 90/311 [00:00<00:00, 344.47it/s]Loading weights:  55%|█████▍    | 170/311 [00:00<00:00, 505.58it/s]Loading weights:  81%|████████  | 252/311 [00:00<00:00, 609.55it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 518.49it/s]
+Qwen/Qwen3-0.6B: 196 modules, 344064 channels, mode gt
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (262337 > 131072). Running this sequence through the model will result in indexing errors
+22:44:05 L23 q_proj: 32 tests, 86.1 s | noop 0.0e+00 | gap 0.0e+00
+22:45:31 L23 k_proj: 32 tests, 86.0 s | noop 0.0e+00 | gap 0.0e+00
+22:46:57 L23 v_proj: 32 tests, 86.1 s | noop 0.0e+00 | gap 0.0e+00
+22:48:24 L23 o_proj: 32 tests, 86.2 s | noop 0.0e+00 | gap 0.0e+00
+22:49:49 L23 gate_proj: 32 tests, 86.0 s | noop 0.0e+00 | gap 0.0e+00
+22:51:15 L23 up_proj: 32 tests, 86.0 s | noop 0.0e+00 | gap 0.0e+00
+22:52:42 L23 down_proj: 32 tests, 86.1 s | noop 0.0e+00 | gap 0.0e+00
+22:56:21 L3 q_proj: 32 tests, 206.0 s | noop 0.0e+00 | gap 0.0e+00
+22:59:47 L3 k_proj: 32 tests, 206.0 s | noop 0.0e+00 | gap 0.0e+00
+23:03:13 L3 v_proj: 32 tests, 206.1 s | noop 0.0e+00 | gap 0.0e+00
+23:06:39 L3 o_proj: 32 tests, 206.0 s | noop 0.0e+00 | gap 0.0e+00
+23:10:05 L3 gate_proj: 32 tests, 206.1 s | noop 0.0e+00 | gap 0.0e+00
+23:13:31 L3 up_proj: 32 tests, 206.1 s | noop 0.0e+00 | gap 0.0e+00
+23:16:58 L3 down_proj: 32 tests, 206.1 s | noop 0.0e+00 | gap 0.0e+00
+23:19:35 L13 q_proj: 32 tests, 146.1 s | noop 0.0e+00 | gap 0.0e+00
+23:22:01 L13 k_proj: 32 tests, 146.0 s | noop 0.0e+00 | gap 0.0e+00
+23:24:27 L13 v_proj: 32 tests, 145.9 s | noop 0.0e+00 | gap 0.0e+00
+23:26:53 L13 o_proj: 32 tests, 145.9 s | noop 0.0e+00 | gap 0.0e+00
+23:29:19 L13 gate_proj: 32 tests, 146.0 s | noop 0.0e+00 | gap 0.0e+00
+23:31:45 L13 up_proj: 32 tests, 146.0 s | noop 0.0e+00 | gap 0.0e+00
+23:34:11 L13 down_proj: 32 tests, 146.1 s | noop 0.0e+00 | gap 0.0e+00
+GT DONE

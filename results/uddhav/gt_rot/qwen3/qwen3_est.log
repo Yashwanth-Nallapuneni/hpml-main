@@ -1,0 +1,16 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights:   0%|          | 1/311 [00:00<01:26,  3.60it/s]Loading weights:  33%|███▎      | 102/311 [00:00<00:00, 345.29it/s]Loading weights:  59%|█████▊    | 182/311 [00:00<00:00, 489.98it/s]Loading weights:  86%|████████▌ | 266/311 [00:00<00:00, 599.62it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 489.83it/s]
+Qwen/Qwen3-0.6B: 196 modules, 344064 channels, mode est
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 302038.68 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 799950.42 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 689725.91 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2518423 > 131072). Running this sequence through the model will result in indexing errors
+CAT k=128: 112 groups
+est window 1/8, 20 s
+est window 2/8, 41 s
+est window 3/8, 61 s
+est window 4/8, 82 s
+est window 5/8, 103 s
+est window 6/8, 124 s
+est window 7/8, 145 s
+est window 8/8, 166 s
+EST DONE 178 s

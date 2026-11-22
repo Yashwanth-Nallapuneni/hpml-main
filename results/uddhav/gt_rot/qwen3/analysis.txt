@@ -1,0 +1,28 @@
+
+######## /workspace/results_gt_rot/qwen3
+
+== Mackin ground truth [pre4]: 336 channels, 21 modules; share dloss>0 0.57
+   replication half 1 vs half 2: pooled 0.495, within-module 0.432; ceiling for the full set (Spearman-Brown) 0.662
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.547   0.509   0.545
+   g1 (first order)                   0.545   0.488   0.545
+   qf/2 (curvature)                   0.118   0.112   0.303
+   fish x en                          0.110   0.097   0.273
+   fish (no error)                    0.010   0.018   0.121
+   en (error energy)                  0.068   0.118   0.212
+   ey (channel energy)                0.069   0.076   0.152
+
+== Mackin ground truth [rot4]: 336 channels, 21 modules; share dloss>0 0.56
+   replication half 1 vs half 2: pooled 0.476, within-module 0.535; ceiling for the full set (Spearman-Brown) 0.645
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.570   0.532   0.636
+   g1 (first order)                   0.568   0.556   0.636
+   qf/2 (curvature)                   0.192   0.191   0.364
+   fish x en                          0.154   0.112   0.303
+   fish (no error)                    0.177   0.165   0.303
+   en (error energy)                 -0.118   0.056   0.091
+   ey (channel energy)               -0.146   0.003   0.091
+
+== 4-bit vs 8-bit (same channels?)
+   g1 + qf/2 : within-module Spearman median -0.005; top-2 per module overlap 0.11
+   qf/2      : within-module Spearman median 0.749; top-2 per module overlap 0.49
