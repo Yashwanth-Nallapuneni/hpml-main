@@ -27,11 +27,15 @@ def report(d: str) -> None:
     print(f"\n######## {d}")
     on = ["layer", "module", "channel"]
     est = {k: pd.read_csv(f"{d}/est_{k}.csv") for k in ("pre4", "rot4", "pre8") if os.path.exists(f"{d}/est_{k}.csv")}
-    if os.path.exists(f"{d}/gt.csv") and "pre4" in est:
-        gt = pd.read_csv(f"{d}/gt.csv").merge(est["pre4"], on=on)
+    gt_all = pd.read_csv(f"{d}/gt.csv") if os.path.exists(f"{d}/gt.csv") else None
+    if gt_all is not None and "kind" not in gt_all:
+        gt_all["kind"] = "pre4"  # old gt.csv files (before --gt-kinds) are all pre4
+    # each kind's ground truth is compared with the estimator for the same error (rot4 truth vs rot4 score)
+    for kind in ([] if gt_all is None else sorted(set(gt_all.kind) & set(est))):
+        gt = gt_all[gt_all.kind == kind].drop(columns="kind").merge(est[kind], on=on)
         gt["key"] = gt.layer.astype(str) + "." + gt.module
         r = sp(gt.d_h1, gt.d_h2)
-        print(f"\n== Mackin ground truth: {len(gt)} channels, {gt.key.nunique()} modules; share dloss>0 {(gt.d_all > 0).mean():.2f}")
+        print(f"\n== Mackin ground truth [{kind}]: {len(gt)} channels, {gt.key.nunique()} modules; share dloss>0 {(gt.d_all > 0).mean():.2f}")
         print(f"   replication half 1 vs half 2: pooled {r:.3f}, within-module {score(gt.d_h1, gt.d_h2, gt.key)[1]:.3f}; "
               f"ceiling for the full set (Spearman-Brown) {2 * r / (1 + r):.3f}")
         print(f"   {'estimator (train text)':32s} {'pooled':>7s} {'within':>7s} {'top10%':>7s}")

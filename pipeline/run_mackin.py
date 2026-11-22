@@ -69,6 +69,8 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--fisher-samples", type=int, default=8)
     ap.add_argument("--gt-windows", type=int, default=16)
     ap.add_argument("--per-module", type=int, default=4, help="gt: random channels per module")
+    ap.add_argument("--gt-kinds", default="pre4", help="gt: comma list of error kinds from KINDS (pre4 = no Hadamard, rot4 = with Hadamard)")
+    ap.add_argument("--gt-layers", default="", help="gt: comma list of layer indices to test; empty = all layers")
     ap.add_argument("--batch", type=int, default=4, help="gt: tests per forward; eval: windows per forward")
     ap.add_argument("--max-minutes", type=float, default=1e9)
     ap.add_argument("--eval-windows", type=int, default=64, help="0 = whole split")
@@ -450,9 +452,17 @@ def run_gt(args, tok, model, targets, scales) -> None:
             hk.remove()
         return torch.cat(out)
 
+    kinds = args.gt_kinds.split(",")
+    assert all(k in KINDS for k in kinds), f"--gt-kinds must be from {list(KINDS)}"
     out_path = os.path.join(args.out_dir, "gt.csv")
-    done = {(int(r["layer"]), r["module"]) for r in csv.DictReader(open(out_path))} if os.path.exists(out_path) else set()
+    old = list(csv.DictReader(open(out_path))) if os.path.exists(out_path) else []
+    assert not old or "kind" in old[0], f"{out_path} is from the old format (no kind column): use a new --out-dir"
+    done = {(int(r["layer"]), r["module"]) for r in old}
     layers = sorted({l for l, _, _ in targets})
+    if args.gt_layers:
+        want = {int(x) for x in args.gt_layers.split(",")}
+        assert want <= set(layers), f"--gt-layers {sorted(want - set(layers))} not in the model"
+        layers = [l for l in layers if l in want]
     order = [layers[i] for i in torch.randperm(len(layers), generator=torch.Generator().manual_seed(0)).tolist()]
     rep = ids.repeat(Bt, 1)
     meta = {"noop_max_abs": 0.0, "start_gap": {}, "clean_loss": (clean.sum() / (N * (T - 1))).item(), "args": vars(args)}
@@ -471,9 +481,10 @@ def run_gt(args, tok, model, targets, scales) -> None:
         assert gap < 1e-5, f"layer {l}: partial forward differs from full by {gap}"
         for mi, n, m in mods:
             t1 = time.time()
-            E = {"pre4": eff_weight(m.weight, scales[n], l, 4, args.group, False) - m.weight.float()}
+            # E[k][c] = quantized row c minus fp row c, so the hook makes channel c's output its quantized output (rot4: after the Hadamard round trip)
+            E = {k: eff_weight(m.weight, scales[n], l, KINDS[k][0], args.group, KINDS[k][1]) - m.weight.float() for k in kinds}
             chans = sorted(torch.randperm(m.out_features, generator=torch.Generator().manual_seed(mi))[:args.per_module].tolist())
-            tests, res = [("pre4", c) for c in chans], {}
+            tests, res = [(k, c) for k in kinds for c in chans], {}
             for b in range(0, len(tests), Bt):
                 chunk = tests[b:b + Bt] + [("noop", 0)] * max(0, Bt - len(tests[b:b + Bt]))
                 hd = m.register_forward_hook(make_hook(chunk, N, E))
@@ -487,7 +498,7 @@ def run_gt(args, tok, model, targets, scales) -> None:
                     else:
                         res[t] = dv
             h = N // 2
-            write_csv(out_path, [{"layer": l, "module": n.split(".")[-1], "channel": c, "d_all": res[k, c].mean().item(),
+            write_csv(out_path, [{"layer": l, "module": n.split(".")[-1], "kind": k, "channel": c, "d_all": res[k, c].mean().item(),
                                   "d_h1": res[k, c][:h].mean().item(), "d_h2": res[k, c][h:].mean().item()} for k, c in tests], append=True)
             json.dump(meta, open(os.path.join(args.out_dir, "gt_meta.json"), "w"), indent=1)
             print(f"{time.strftime('%H:%M:%S')} L{l} {n.split('.')[-1]}: {len(tests)} tests, {time.time() - t1:.1f} s | "
