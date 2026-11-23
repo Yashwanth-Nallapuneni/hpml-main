@@ -4,7 +4,7 @@ Hypothesis: restore(s_rob_global) lowers held-out ppl below fp (Gemma-3-1b-pt wi
 pulls p toward the hard label (the model was distilled on soft targets), not because it adds ability.
 Per config on held-out windows: ppl, mean entropy H(p), mean max prob, ECE (15 bins, top-1 prob vs correctness), NLL on tokens where the
 fp model's top-1 is correct / wrong. Configs: fp, al_H, al_H + restore top f1/32 by s_rob_global, by curv_rot, and random.
-run_mackin's run_eval keeps configure/hook/score as closures, so restore is reproduced here exactly (forward hook, F.linear(input, original rows)).
+exp_2_cheap_est's run_eval keeps configure/hook/score as closures, so restore is reproduced here exactly (forward hook, F.linear(input, original rows)).
 Needs --out-dir with cat.pt, est_rot4.csv and est_grad_rot4.csv (with an s_rob column). Logits are made 512 tokens at a time (262k vocab).
 """
 import argparse
@@ -18,7 +18,7 @@ from torch.nn.attention import SDPBackend, sdpa_kernel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.integrations import sdpa_attention
 
-from run_mackin import eff_weight, get_cat
+from exp_2_cheap_est import eff_weight, get_cat
 from run_qsens import write_csv
 from run_sensitivity import find_targets
 from src.data import load_text
@@ -75,7 +75,7 @@ def main() -> None:
     for p in model.parameters():
         p.requires_grad_(False)
     targets = find_targets(model, PROJECTIONS)
-    sdpa_attention.use_gqa_in_sdpa = lambda *a, **k: False  # as run_mackin main: fp32 SDPA on the memory-efficient kernel
+    sdpa_attention.use_gqa_in_sdpa = lambda *a, **k: False  # as exp_2_cheap_est main: fp32 SDPA on the memory-efficient kernel
     with torch.no_grad(), sdpa_kernel([SDPBackend.EFFICIENT_ATTENTION]):
         scales = get_cat(args, tok, model, targets)
         test = load_text(tok, args.eval_data, False, args.seq_len, args.eval_windows).cuda()

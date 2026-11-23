@@ -13,7 +13,7 @@ for m in qwen3 llama gemma; do
   B=/workspace/results_mackin_cat/$m
   C="--model ${NAME[$m]} --align cat --group 128 --cat-k 128 --seq-len ${SEQ[$m]}"
   Z=$S/$m/zs2; mkdir -p $Z; cp $B/cat.pt $S/$m/built/* $Z/
-  /workspace/venv_lme2/bin/python run_mackin.py $C --mode eval --out-dir $Z --eval-windows 2 --k f0.03125 --hows restore --random-seeds 0 \
+  /workspace/venv_lme2/bin/python exp_2_cheap_est.py $C --mode eval --out-dir $Z --eval-windows 2 --k f0.03125 --hows restore --random-seeds 0 \
     --selectors s_rob,curv_rot --zs-tasks arc_easy,arc_challenge,hellaswag,piqa,winogrande,lambada_openai \
     --zs-configs "al_H:s_rob:f0.03125:restore,al_H:curv_rot:f0.03125:restore" > $S/logs/${m}_zs2.log 2>&1 || echo "FAIL $m zs2" >> $S/logs/done_zs2.log
 done

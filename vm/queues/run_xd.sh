@@ -21,16 +21,16 @@ for m in qwen3 llama gemma; do
   for d in ${QF//,/ }; do
     D=$S/$m/est_$d; mkdir -p $D; cp $B/cat.pt $D/
     if [ $d = c4 ] && [ -f /workspace/results_s3/$m/est_c4/est_rot4.csv ]; then cp /workspace/results_s3/$m/est_c4/est_*.csv /workspace/results_s3/$m/est_c4/est_meta.json $D/; continue; fi
-    python run_mackin.py $C --mode est --calib 8 --est-data $d --out-dir $D > $S/logs/${m}_est_$d.log 2>&1 || echo "FAIL $m est $d" >> $S/logs/done.log
+    python exp_2_cheap_est.py $C --mode est --calib 8 --est-data $d --out-dir $D > $S/logs/${m}_est_$d.log 2>&1 || echo "FAIL $m est $d" >> $S/logs/done.log
   done
   for d in ${GRAD//,/ }; do
     D=$S/$m/grad_$d; mkdir -p $D; cp $B/cat.pt $D/
-    python run_mackin.py $C --mode grad --calib ${NG[$m]} --est-data $d --out-dir $D > $S/logs/${m}_grad_$d.log 2>&1 || echo "FAIL $m grad $d" >> $S/logs/done.log
+    python exp_2_cheap_est.py $C --mode grad --calib ${NG[$m]} --est-data $d --out-dir $D > $S/logs/${m}_grad_$d.log 2>&1 || echo "FAIL $m grad $d" >> $S/logs/done.log
   done
   python build_xd.py $S/$m $S/$m/built --grad $GRAD --qf $QF > $S/logs/${m}_build.log 2>&1 || { echo "FAIL $m build" >> $S/logs/done.log; continue; }
   for ev in $HELD; do
     E=$S/$m/eval_$ev; mkdir -p $E; cp $B/cat.pt $S/$m/built/* $E/
-    python run_mackin.py $C --mode eval --out-dir $E --eval-data $ev --eval-windows 40 --k 2,f0.03125 --hows restore --random-seeds 2 --batch 2 \
+    python exp_2_cheap_est.py $C --mode eval --out-dir $E --eval-data $ev --eval-windows 40 --k 2,f0.03125 --hows restore --random-seeds 2 --batch 2 \
       --selectors $SELS > $S/logs/${m}_eval_$ev.log 2>&1 || echo "FAIL $m eval $ev" >> $S/logs/done.log
   done
 done

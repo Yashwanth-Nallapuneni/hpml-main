@@ -21,10 +21,10 @@ for m in ${MODELS:-qwen3 llama gemma}; do
   D=$R/$m
   C="--model ${NAME[$m]} --align cat --group 128 --cat-k 128 --seq-len ${SEQ[$m]} --out-dir $D"
   echo "$(date) $m: est"
-  [ -f $D/est_rot4.csv ] || python pipeline/run_mackin.py $C --mode est --calib 8 > $R/logs/${m}_est.log 2>&1 \
+  [ -f $D/est_rot4.csv ] || python pipeline/exp_2_cheap_est.py $C --mode est --calib 8 > $R/logs/${m}_est.log 2>&1 \
     || { echo "$m est FAILED, see $R/logs/${m}_est.log"; continue; }
   echo "$(date) $m: gt"
-  python pipeline/run_mackin.py $C --mode gt --gt-kinds ${KINDS:-pre4,rot4} --gt-layers ${LAYERS[$m]} \
+  python pipeline/exp_2_cheap_est.py $C --mode gt --gt-kinds ${KINDS:-pre4,rot4} --gt-layers ${LAYERS[$m]} \
     --gt-windows 16 --batch 2 --per-module ${PER_MODULE:-16} > $R/logs/${m}_gt.log 2>&1 \
     || echo "$m gt FAILED, saving what exists; see $R/logs/${m}_gt.log"
   python analysis/analyze_mackin.py $D > $D/analysis.txt 2>&1
