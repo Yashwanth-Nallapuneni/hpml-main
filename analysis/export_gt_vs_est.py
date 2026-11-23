@@ -23,7 +23,7 @@ def export(root: str) -> pd.DataFrame:
             m = g.merge(est, on=ON, how="left", validate="one_to_one")
             assert m.g1.notna().all(), f"{model} {kind}: {m.g1.isna().sum()} tested channels have no estimator row"
             m = m.rename(columns={"d_all": "gt_dloss", "d_h1": "gt_h1", "d_h2": "gt_h2", "g1": "est_g1", "qf": "est_qf"})
-            m["est"] = m.est_g1 + m.est_qf / 2  # the 2nd-order Taylor score used in analysis.txt and the handover table
+            m["est"] = m.est_g1 + m.est_qf / 2  # the 2nd-order Taylor score used in analysis.txt and the results table
             m["rank_gt"] = m.gt_dloss.rank(ascending=False).astype(int)  # 1 = most sensitive
             m["rank_est"] = m.est.rank(ascending=False).astype(int)
             m.insert(0, "model", model)
