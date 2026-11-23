@@ -27,7 +27,7 @@ from transformers.integrations.sdpa_attention import sdpa_attention_forward
 
 from src.data import load_wikitext2
 from src.hadamard import sylvester_hadamard
-from run_mackin import cat_blocks
+from exp_2_cheap_est import cat_blocks
 
 SHARE = {"q_proj": "qkv", "k_proj": "qkv", "v_proj": "qkv", "gate_proj": "gu", "up_proj": "gu", "down_proj": "down"}
 

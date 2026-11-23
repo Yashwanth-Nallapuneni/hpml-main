@@ -9,7 +9,7 @@ Code and small result files for the project.
 requirements.txt
 
 src/                 shared library: data loading, quantizer, Hadamard, model wrapper, evaluation
-pipeline/            main estimator pipeline (run_mackin.py) and the scripts it imports
+pipeline/            main estimator pipeline (exp_2_cheap_est.py) and the scripts it imports
 analysis/            offline analysis, tables and plots
 early_experiments/   session 1-3 experiments (kept for reproducibility)
 vm/                  VM helper (vm.sh), VM setup, and queues/ = exact job queues that were run
@@ -22,7 +22,7 @@ From the repo root:
 ```bash
 pip install -r requirements.txt
 export PYTHONPATH=$PWD:$PWD/pipeline
-python pipeline/run_mackin.py --help
+python pipeline/exp_2_cheap_est.py --help
 ```
 Model runs need a GPU (we use a GCP VM with one L4, see `vm/vm.sh`).
 

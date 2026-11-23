@@ -5,7 +5,7 @@
    --sw fisher uses s_o = E[g_o^2] (sampled labels); --sw shuffled permutes s within each module (control: same spread of
    weights, no information); --sw none is plain CAT.
 2. Mackin's exemption in W4A4: on top of CAT, the top-k output channels per module are recomputed in fp (fp input, fp row),
-   chosen by a cheap estimator of each channel's real W4A4 error (g1 + qf/2, as in run_mackin.py) or by baselines / random.
+   chosen by a cheap estimator of each channel's real W4A4 error (g1 + qf/2, as in exp_2_cheap_est.py) or by baselines / random.
 """
 import argparse
 import json

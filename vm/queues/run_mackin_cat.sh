@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Block-CAT (arXiv 2603.04359) version of the Mackin runs. Two queues; a step that fails (e.g. GPU memory while
-# sharing) retries once when no other run_mackin job is running.
+# sharing) retries once when no other exp_2_cheap_est job is running.
 set -u
 source /workspace/venv/bin/activate
 cd "$(dirname "$0")"
@@ -9,11 +9,11 @@ R=/workspace/results_mackin_cat
 mkdir -p $R/logs
 run() {  # run LOG ARGS...
   local log=$1; shift
-  python run_mackin.py --align cat "$@" > $log 2>&1 && return
+  python exp_2_cheap_est.py --align cat "$@" > $log 2>&1 && return
   sleep 5
-  while [ $(pgrep -fc "[p]ython run_mackin.py") -gt 0 ]; do sleep 30; done
+  while [ $(pgrep -fc "[p]ython exp_2_cheap_est.py") -gt 0 ]; do sleep 30; done
   echo "$(date -u) retry $log" >> $R/logs/retries.log
-  python run_mackin.py --align cat "$@" > $log 2>&1
+  python exp_2_cheap_est.py --align cat "$@" > $log 2>&1
 }
 S="--model HuggingFaceTB/SmolLM2-135M --group 64 --cat-k 192 --out-dir $R/smollm2"
 Q="--model Qwen/Qwen3-0.6B --group 128 --cat-k 128 --out-dir $R/qwen3"

@@ -12,7 +12,7 @@ for m in qwen3 llama gemma; do
   C="--model ${NAME[$m]} --align cat --group 128 --cat-k 128 --seq-len ${SEQ[$m]}"
   Z=$S/$m/zs; mkdir -p $Z; cp $B/cat.pt $B/est_*.csv $B/est_meta.json $S/$m/grad_wt/est_grad_*.csv $S/$m/grad_wt/est_grad_meta.json $Z/
   # --eval-windows 2: run_eval loads the test set, unused in zs mode
-  /workspace/venv_lme2/bin/python run_mackin.py $C --mode eval --out-dir $Z --eval-windows 2 --k f0.03125 --hows restore --random-seeds 1 \
+  /workspace/venv_lme2/bin/python exp_2_cheap_est.py $C --mode eval --out-dir $Z --eval-windows 2 --k f0.03125 --hows restore --random-seeds 1 \
     --selectors pred_rot,pred_rot_big_global --zs-tasks arc_easy,arc_challenge,hellaswag,piqa,winogrande,lambada_openai \
     --zs-configs "fp:-:0:-,al_H:-:0:-,al_H:pred_rot:f0.03125:restore,al_H:pred_rot_big_global:f0.03125:restore,al_H:random0:f0.03125:restore" > $S/logs/${m}_zs.log 2>&1
 done

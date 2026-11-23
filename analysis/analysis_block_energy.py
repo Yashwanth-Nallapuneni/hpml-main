@@ -1,11 +1,11 @@
 """Can the per-output-block error energy under rotation (est_rot4.csv "en") be predicted without simulating Q?
 
-Derivation (read from run_mackin.eff_weight, cat alignment, row-vector convention, symmetric INT4 RTN, scale = amax/7 per 128 input cols):
+Derivation (read from exp_2_cheap_est.eff_weight, cat alignment, row-vector convention, symmetric INT4 RTN, scale = amax/7 per 128 input cols):
   P = R_out^T (W M^-1) R_in,  Delta = Q(P) - P,  W_eff - W = R_out Delta R_in^T M   (M = blockdiag, rmul(A, M) = A M)
   d_t = x (W_eff - W)^T = u_t Delta^T R_out^T with u_t = x M^T R_in, so d_{t,c} = sum_{c'} R_out[c,c'] (Delta_c' . u_t), c' in block(c)
   noise model: E d_{t,c}^2 = (1/B) sum_{c' in block(c)} sum_g sigma2[c',g] U[g], U[g] = E_t ||u_{t,g}||^2,
   sigma2 = scale^2/12 (noise) or mean(Delta^2) over the group (emp). Symmetric quantizer, so no zero-point correction.
-Forward hooks only, no gradients. Uses cat.pt alignment (as run_mackin.py --align cat).
+Forward hooks only, no gradients. Uses cat.pt alignment (as exp_2_cheap_est.py --align cat).
 """
 import argparse
 import contextlib
@@ -16,7 +16,7 @@ import os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from run_mackin import ROT, eff_weight, rmul
+from exp_2_cheap_est import ROT, eff_weight, rmul
 from run_sensitivity import find_targets
 from src.data import load_wikitext2
 from src.hadamard import BlockHadamardRotation
@@ -134,7 +134,7 @@ def main() -> None:
 
     hs = [m.register_forward_hook(hook(l, n)) for l, n, m in targets]
     sdpa = contextlib.nullcontext()
-    if dev == "cuda":  # as run_mackin.main
+    if dev == "cuda":  # as exp_2_cheap_est.main
         from torch.nn.attention import SDPBackend, sdpa_kernel
         from transformers.integrations import sdpa_attention
         sdpa_attention.use_gqa_in_sdpa = lambda *a, **k: False
