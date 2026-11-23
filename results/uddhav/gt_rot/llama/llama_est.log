@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<00:39,  3.63it/s]Loading weights:  16%|█▌        | 23/146 [00:00<00:01, 74.83it/s]Loading weights:  28%|██▊       | 41/146 [00:00<00:01, 104.23it/s]Loading weights:  40%|███▉      | 58/146 [00:00<00:00, 122.04it/s]Loading weights:  52%|█████▏    | 76/146 [00:00<00:00, 133.09it/s]Loading weights:  64%|██████▍   | 94/146 [00:00<00:00, 142.12it/s]Loading weights:  77%|███████▋  | 112/146 [00:00<00:00, 147.49it/s]Loading weights:  89%|████████▉ | 130/146 [00:01<00:00, 152.90it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 128.94it/s]
+meta-llama/Llama-3.2-1B: 112 modules, 376832 channels, mode est
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2436214 > 131072). Running this sequence through the model will result in indexing errors
+CAT k=128: 64 groups
+est window 1/8, 38 s
+est window 2/8, 76 s
+est window 3/8, 114 s
+est window 4/8, 152 s
+est window 5/8, 189 s
+est window 6/8, 227 s
+est window 7/8, 265 s
+est window 8/8, 303 s
+EST DONE 315 s

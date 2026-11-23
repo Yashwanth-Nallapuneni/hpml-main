@@ -1,0 +1,28 @@
+
+######## /workspace/results_gt_rot/llama
+
+== Mackin ground truth [pre4]: 336 channels, 21 modules; share dloss>0 0.52
+   replication half 1 vs half 2: pooled 0.164, within-module 0.124; ceiling for the full set (Spearman-Brown) 0.281
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.280   0.262   0.424
+   g1 (first order)                   0.267   0.232   0.394
+   qf/2 (curvature)                   0.057  -0.053   0.303
+   fish x en                          0.073  -0.085   0.273
+   fish (no error)                    0.134  -0.035   0.212
+   en (error energy)                 -0.153  -0.091   0.152
+   ey (channel energy)               -0.155  -0.126   0.121
+
+== Mackin ground truth [rot4]: 336 channels, 21 modules; share dloss>0 0.51
+   replication half 1 vs half 2: pooled 0.119, within-module 0.159; ceiling for the full set (Spearman-Brown) 0.213
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.212   0.253   0.455
+   g1 (first order)                   0.209   0.244   0.455
+   qf/2 (curvature)                  -0.028  -0.059   0.394
+   fish x en                         -0.045   0.012   0.364
+   fish (no error)                    0.043  -0.006   0.242
+   en (error energy)                 -0.073  -0.082   0.152
+   ey (channel energy)               -0.044  -0.018   0.152
+
+== 4-bit vs 8-bit (same channels?)
+   g1 + qf/2 : within-module Spearman median -0.004; top-2 per module overlap 0.09
+   qf/2      : within-module Spearman median 0.690; top-2 per module overlap 0.54

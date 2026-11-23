@@ -1,0 +1,25 @@
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<00:41,  3.53it/s]Loading weights:  15%|█▌        | 22/146 [00:00<00:01, 72.77it/s]Loading weights:  28%|██▊       | 41/146 [00:00<00:00, 107.05it/s]Loading weights:  40%|████      | 59/146 [00:00<00:00, 125.06it/s]Loading weights:  52%|█████▏    | 76/146 [00:00<00:00, 137.71it/s]Loading weights:  64%|██████▍   | 94/146 [00:00<00:00, 145.61it/s]Loading weights:  77%|███████▋  | 112/146 [00:00<00:00, 150.84it/s]Loading weights:  89%|████████▉ | 130/146 [00:01<00:00, 154.51it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 130.58it/s]
+meta-llama/Llama-3.2-1B: 112 modules, 376832 channels, mode gt
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (252853 > 131072). Running this sequence through the model will result in indexing errors
+23:43:11 L14 q_proj: 32 tests, 120.8 s | noop 0.0e+00 | gap 0.0e+00
+23:45:11 L14 k_proj: 32 tests, 120.8 s | noop 0.0e+00 | gap 0.0e+00
+23:47:12 L14 v_proj: 32 tests, 120.5 s | noop 0.0e+00 | gap 0.0e+00
+23:49:13 L14 o_proj: 32 tests, 120.7 s | noop 0.0e+00 | gap 0.0e+00
+23:51:13 L14 gate_proj: 32 tests, 120.6 s | noop 0.0e+00 | gap 0.0e+00
+23:53:14 L14 up_proj: 32 tests, 120.5 s | noop 0.0e+00 | gap 0.0e+00
+23:55:15 L14 down_proj: 32 tests, 120.8 s | noop 0.0e+00 | gap 0.0e+00
+00:00:58 L2 q_proj: 32 tests, 321.9 s | noop 0.0e+00 | gap 0.0e+00
+00:06:20 L2 k_proj: 32 tests, 322.2 s | noop 0.0e+00 | gap 0.0e+00
+00:11:43 L2 v_proj: 32 tests, 322.2 s | noop 0.0e+00 | gap 0.0e+00
+00:17:06 L2 o_proj: 32 tests, 323.2 s | noop 0.0e+00 | gap 0.0e+00
+00:22:29 L2 gate_proj: 32 tests, 323.1 s | noop 0.0e+00 | gap 0.0e+00
+00:27:52 L2 up_proj: 32 tests, 323.1 s | noop 0.0e+00 | gap 0.0e+00
+00:33:15 L2 down_proj: 32 tests, 322.8 s | noop 0.0e+00 | gap 0.0e+00
+00:37:15 L8 q_proj: 32 tests, 221.4 s | noop 0.0e+00 | gap 0.0e+00
+00:40:56 L8 k_proj: 32 tests, 221.5 s | noop 0.0e+00 | gap 0.0e+00
+00:44:38 L8 v_proj: 32 tests, 222.2 s | noop 0.0e+00 | gap 0.0e+00
+00:48:21 L8 o_proj: 32 tests, 222.1 s | noop 0.0e+00 | gap 0.0e+00
+00:52:03 L8 gate_proj: 32 tests, 222.1 s | noop 0.0e+00 | gap 0.0e+00
+00:55:45 L8 up_proj: 32 tests, 222.0 s | noop 0.0e+00 | gap 0.0e+00
+00:59:27 L8 down_proj: 32 tests, 222.0 s | noop 0.0e+00 | gap 0.0e+00
+GT DONE
