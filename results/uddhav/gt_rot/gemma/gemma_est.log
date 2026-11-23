@@ -1,12 +1,11 @@
-Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<01:35,  3.56it/s]Loading weights:  22%|██▏       | 76/340 [00:00<00:01, 254.88it/s]Loading weights:  39%|███▉      | 133/340 [00:00<00:00, 351.05it/s]Loading weights:  55%|█████▍    | 186/340 [00:00<00:00, 400.42it/s]Loading weights:  70%|███████   | 239/340 [00:00<00:00, 431.85it/s]Loading weights:  87%|████████▋ | 297/340 [00:00<00:00, 475.65it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 388.80it/s]
 google/gemma-3-1b-pt: 182 modules, 459264 channels, mode est
 CAT k=128: 104 groups
-est window 1/8, 21 s
-est window 2/8, 42 s
-est window 3/8, 62 s
-est window 4/8, 83 s
-est window 5/8, 104 s
-est window 6/8, 125 s
-est window 7/8, 146 s
-est window 8/8, 166 s
-EST DONE 181 s
+est window 1/8, 20 s
+est window 2/8, 40 s
+est window 3/8, 61 s
+est window 4/8, 82 s
+est window 5/8, 102 s
+est window 6/8, 123 s
+est window 7/8, 144 s
+est window 8/8, 165 s
+EST DONE 180 s

@@ -1,6 +1,28 @@
 
 ######## /workspace/results_gt_rot/gemma
 
+== Mackin ground truth [pre4]: 336 channels, 21 modules; share dloss>0 0.51
+   replication half 1 vs half 2: pooled 0.308, within-module 0.206; ceiling for the full set (Spearman-Brown) 0.471
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.234   0.253   0.455
+   g1 (first order)                   0.240   0.288   0.424
+   qf/2 (curvature)                   0.029  -0.038   0.424
+   fish x en                          0.006  -0.026   0.212
+   fish (no error)                   -0.068  -0.206   0.030
+   en (error energy)                  0.028  -0.059   0.273
+   ey (channel energy)                0.012  -0.091   0.212
+
+== Mackin ground truth [rot4]: 336 channels, 21 modules; share dloss>0 0.53
+   replication half 1 vs half 2: pooled 0.363, within-module 0.385; ceiling for the full set (Spearman-Brown) 0.532
+   estimator (train text)            pooled  within  top10%
+   g1 + qf/2 (2nd-order Taylor)       0.243   0.206   0.303
+   g1 (first order)                   0.253   0.206   0.303
+   qf/2 (curvature)                  -0.036   0.088   0.303
+   fish x en                         -0.045   0.150   0.242
+   fish (no error)                    0.050   0.088   0.061
+   en (error energy)                 -0.108   0.000   0.212
+   ey (channel energy)               -0.150  -0.238   0.061
+
 == 4-bit vs 8-bit (same channels?)
    g1 + qf/2 : within-module Spearman median -0.007; top-2 per module overlap 0.15
    qf/2      : within-module Spearman median 0.757; top-2 per module overlap 0.58

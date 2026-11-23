@@ -1,15 +1,23 @@
-Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<01:36,  3.50it/s]Loading weights:  24%|██▍       | 81/340 [00:00<00:00, 263.95it/s]Loading weights:  39%|███▉      | 134/340 [00:00<00:00, 343.44it/s]Loading weights:  55%|█████▌    | 187/340 [00:00<00:00, 394.44it/s]Loading weights:  70%|███████   | 239/340 [00:00<00:00, 430.35it/s]Loading weights:  87%|████████▋ | 297/340 [00:00<00:00, 473.62it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 386.98it/s]
 google/gemma-3-1b-pt: 182 modules, 459264 channels, mode gt
-Traceback (most recent call last):
-  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 702, in <module>
-    main()
-    ~~~~^^
-  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 698, in main
-    {"est": run_est, "grad": run_grad, "gt": run_gt, "eval": run_eval}[args.mode](args, tok, model, targets, scales)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/venv/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-    return func(*args, **kwargs)
-  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 481, in run_gt
-    assert gap < 1e-5, f"layer {l}: partial forward differs from full by {gap}"
-           ^^^^^^^^^^
-AssertionError: layer 23: partial forward differs from full by 0.03992035534825465
+01:23:25 L23 q_proj: 32 tests, 67.1 s | noop 0.0e+00 | gap 2.4e-07
+01:24:32 L23 k_proj: 32 tests, 66.7 s | noop 0.0e+00 | gap 2.4e-07
+01:25:39 L23 v_proj: 32 tests, 66.7 s | noop 0.0e+00 | gap 2.4e-07
+01:26:46 L23 o_proj: 32 tests, 66.8 s | noop 0.0e+00 | gap 2.4e-07
+01:27:52 L23 gate_proj: 32 tests, 66.7 s | noop 0.0e+00 | gap 2.4e-07
+01:28:59 L23 up_proj: 32 tests, 66.8 s | noop 0.0e+00 | gap 2.4e-07
+01:30:06 L23 down_proj: 32 tests, 66.8 s | noop 0.0e+00 | gap 2.4e-07
+01:32:44 L3 q_proj: 32 tests, 148.0 s | noop 0.0e+00 | gap 6.9e-07
+01:35:11 L3 k_proj: 32 tests, 147.8 s | noop 0.0e+00 | gap 6.9e-07
+01:37:39 L3 v_proj: 32 tests, 147.9 s | noop 0.0e+00 | gap 6.9e-07
+01:40:07 L3 o_proj: 32 tests, 147.7 s | noop 0.0e+00 | gap 6.9e-07
+01:42:35 L3 gate_proj: 32 tests, 147.9 s | noop 0.0e+00 | gap 6.9e-07
+01:45:03 L3 up_proj: 32 tests, 148.0 s | noop 0.0e+00 | gap 6.9e-07
+01:47:31 L3 down_proj: 32 tests, 148.0 s | noop 0.0e+00 | gap 6.9e-07
+01:49:27 L13 q_proj: 32 tests, 107.3 s | noop 0.0e+00 | gap 5.0e-07
+01:51:14 L13 k_proj: 32 tests, 107.4 s | noop 0.0e+00 | gap 5.0e-07
+01:53:01 L13 v_proj: 32 tests, 107.3 s | noop 0.0e+00 | gap 5.0e-07
+01:54:49 L13 o_proj: 32 tests, 107.3 s | noop 0.0e+00 | gap 5.0e-07
+01:56:36 L13 gate_proj: 32 tests, 107.4 s | noop 0.0e+00 | gap 5.0e-07
+01:58:23 L13 up_proj: 32 tests, 107.4 s | noop 0.0e+00 | gap 5.0e-07
+02:00:11 L13 down_proj: 32 tests, 107.3 s | noop 0.0e+00 | gap 5.0e-07
+GT DONE

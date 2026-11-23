@@ -1,0 +1,41 @@
+{
+ "noop_max_abs": 0.0,
+ "start_gap": {
+  "23": 2.380718366913898e-07,
+  "3": 6.940155740707152e-07,
+  "13": 4.952212200224225e-07
+ },
+ "clean_loss": 2.5929339233224575,
+ "args": {
+  "model": "google/gemma-3-1b-pt",
+  "mode": "gt",
+  "group": 128,
+  "seq_len": 1024,
+  "calib": 8,
+  "est_data": "wikitext",
+  "fisher_samples": 8,
+  "gt_windows": 16,
+  "per_module": 16,
+  "gt_kinds": "pre4,rot4",
+  "gt_layers": "3,13,23",
+  "batch": 2,
+  "max_minutes": 1000000000.0,
+  "eval_windows": 64,
+  "eval_data": "wikitext",
+  "k": "2",
+  "hows": "restore,isolate",
+  "selectors": "all",
+  "budget_group": "",
+  "rot_seed": 0,
+  "random_seeds": 3,
+  "align": "cat",
+  "cat_k": 128,
+  "zs_tasks": "",
+  "zs_batch": 16,
+  "zs_configs": "",
+  "weights_dtype": "fp32",
+  "grad_hooks": false,
+  "orig_on_cpu": false,
+  "out_dir": "/workspace/results_gt_rot/gemma"
+ }
+}

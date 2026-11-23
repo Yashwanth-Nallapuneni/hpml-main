@@ -1,7 +1,7 @@
 {
- "clean_loss_calib": 3.2026838226169203,
+ "clean_loss_calib": 3.2026837331225564,
  "n_tok": 8184,
- "wall_s": 181.29968285560608,
+ "wall_s": 179.6848213672638,
  "args": {
   "model": "google/gemma-3-1b-pt",
   "mode": "est",
