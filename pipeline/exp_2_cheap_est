@@ -1,5 +1,4 @@
-"""Dr. Mackin's proof of concept (meeting 2, 2026-10-30) and a cheap channel-sensitivity estimator under his definition.
-
+"""
 Pipeline for each q/k/v/o/gate/up/down (weights only, W4A16, RTN, group = Hadamard block = --group):
   alignment : one scale per input channel, s_j = mean|x_j|^a (geomean 1), a in {0,.25,.5,.75,1} chosen per module
               on calibration text to minimise the module's output error under the full pipeline. This is the
