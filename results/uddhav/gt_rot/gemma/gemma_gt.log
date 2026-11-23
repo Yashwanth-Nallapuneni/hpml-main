@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<01:36,  3.50it/s]Loading weights:  24%|██▍       | 81/340 [00:00<00:00, 263.95it/s]Loading weights:  39%|███▉      | 134/340 [00:00<00:00, 343.44it/s]Loading weights:  55%|█████▌    | 187/340 [00:00<00:00, 394.44it/s]Loading weights:  70%|███████   | 239/340 [00:00<00:00, 430.35it/s]Loading weights:  87%|████████▋ | 297/340 [00:00<00:00, 473.62it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 386.98it/s]
+google/gemma-3-1b-pt: 182 modules, 459264 channels, mode gt
+Traceback (most recent call last):
+  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 702, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 698, in main
+    {"est": run_est, "grad": run_grad, "gt": run_gt, "eval": run_eval}[args.mode](args, tok, model, targets, scales)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/workspace/team20-hpml/pipeline/run_mackin.py", line 481, in run_gt
+    assert gap < 1e-5, f"layer {l}: partial forward differs from full by {gap}"
+           ^^^^^^^^^^
+AssertionError: layer 23: partial forward differs from full by 0.03992035534825465

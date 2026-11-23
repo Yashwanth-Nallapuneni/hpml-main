@@ -1,0 +1,6 @@
+
+######## /workspace/results_gt_rot/gemma
+
+== 4-bit vs 8-bit (same channels?)
+   g1 + qf/2 : within-module Spearman median -0.007; top-2 per module overlap 0.15
+   qf/2      : within-module Spearman median 0.757; top-2 per module overlap 0.58
