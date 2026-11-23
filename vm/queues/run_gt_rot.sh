@@ -27,9 +27,9 @@ for m in ${MODELS:-qwen3 llama gemma}; do
   python pipeline/exp_2_cheap_est.py $C --mode gt --gt-kinds ${KINDS:-pre4,rot4} --gt-layers ${LAYERS[$m]} \
     --gt-windows 16 --batch 2 --per-module ${PER_MODULE:-16} > $R/logs/${m}_gt.log 2>&1 \
     || echo "$m gt FAILED, saving what exists; see $R/logs/${m}_gt.log"
-  python analysis/analyze_mackin.py $D > $D/analysis.txt 2>&1
+  python analysis/analyze_gt.py $D > $D/analysis.txt 2>&1
 
-  # save: small files only; est_*.csv keeps only the tested layers (full files are too big for git), same name so analyze_mackin.py runs on the copy
+  # save: small files only; est_*.csv keeps only the tested layers (full files are too big for git), same name so analyze_gt.py runs on the copy
   mkdir -p $OUT/$m
   cp $D/gt.csv $D/gt_meta.json $D/est_meta.json $D/analysis.txt $R/logs/${m}_est.log $R/logs/${m}_gt.log $OUT/$m/ 2>/dev/null
   for k in pre4 rot4; do

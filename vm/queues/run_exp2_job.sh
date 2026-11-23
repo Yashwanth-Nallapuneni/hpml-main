@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Mackin proof of concept on 3 models, two queues sharing the L4. Run on the VM:
-#   nohup bash run_mackin_job.sh > /workspace/results_mackin/logs/job.log 2>&1 < /dev/null &
+#   nohup bash run_exp2_job.sh > /workspace/results_mackin/logs/job.log 2>&1 < /dev/null &
 set -u
 source /workspace/venv/bin/activate
 cd "$(dirname "$0")"

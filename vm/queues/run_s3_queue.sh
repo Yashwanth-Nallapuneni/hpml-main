@@ -11,7 +11,7 @@ until grep -q "QUEUE DONE" /workspace/results_cat_repro/logs/main.log 2>/dev/nul
 D=$S/smoke; mkdir -p $D; cp /workspace/results_mackin_cat/smollm2/{cat.pt,est_pre4.csv,est_rot4.csv,est_pre8.csv,est_meta.json} $D/
 python exp_2_cheap_est.py --model HuggingFaceTB/SmolLM2-135M --align cat --group 64 --cat-k 192 --mode eval --out-dir $D --eval-windows 2 \
   --k 2,f0.03125 --hows restore,isolate,isolate8 --budget-group 32 --random-seeds 2 > $S/logs/smoke.log 2>&1
-python analyze_mackin.py $D >> $S/logs/smoke.log 2>&1
+python analyze_gt.py $D >> $S/logs/smoke.log 2>&1
 
 # item 5: W4A4 (CAT paper setting): plain vs sensitivity-weighted vs shuffled CAT on 4 calibration seeds; exemption on seed 0
 python run_w4a4_sens.py --sw none,fisher,shuffled --seeds 0,1,2,3 --exempt-k 2,8 --out $S/w4a4_sens.jsonl > $S/logs/w4a4_sens.log 2>&1

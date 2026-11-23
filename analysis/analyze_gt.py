@@ -1,4 +1,4 @@
-"""Analyse exp_2_cheap_est.py outputs. Usage: python analyze_mackin.py DIR [DIR ...]
+"""Analyse exp_2_cheap_est.py outputs. Usage: python analyze_gt.py DIR [DIR ...]
 
 1. Mackin's ground truth (one-sided, real pre-Hadamard INT4 error, fp model): does it replicate (half 1 vs half 2)?
 2. Cheap estimators from calibration (train) text vs that ground truth.

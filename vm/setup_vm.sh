@@ -32,7 +32,7 @@ fi
 
 echo "==> Installing requirements"
 /workspace/venv/bin/pip install --upgrade pip
-/workspace/venv/bin/pip install -r "$HERE/requirements.txt"
+/workspace/venv/bin/pip install -r "$HERE/../requirements.txt"
 # the image ships torchaudio 2.11 against torch 2.9.1, which breaks `import transformers`
 /workspace/venv/bin/pip install --no-deps torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu129
 chmod -R a+rwX /workspace/venv
